@@ -1,8 +1,18 @@
-import axios from 'axios';
-
 export const fetchWeather = async (city) => {
-  const key = 'YOUR_API_KEY';
-  const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${city}&lang=uk`;
-  const response = await axios.get(url);
-  return response.data;
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  return {
+    location: {
+      name: "Kyiv",
+      country: "Ukraine",
+      lat: 50.45,
+      lon: 30.52
+    },
+    current: {
+      temp_c: 22,
+      condition: {
+        text: "Хмарно"
+      }
+    }
+  };
 };
